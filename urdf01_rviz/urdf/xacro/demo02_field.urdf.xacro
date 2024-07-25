@@ -1,0 +1,15 @@
+<robot name="mycar" xmlns:xacro="http://wiki.ros.org/xacro">
+    <!-- 属性封装 -->
+    <xacro:property name="wheel_radius" value="0.0325" />
+    <xacro:property name="wheel_length" value="0.0015" />
+    <xacro:property name="PI" value="3.1415927" />
+    <xacro:property name="radius" value="0.08" />
+
+    <myusePropertyxxx name="${PI}" />
+    <myusePropertyxxx name="${radius}" />
+
+    <myusePropertyxxx result="${PI /2 }" />
+    <myusePropertyxxx result="${radius /2 }" />
+
+
+</robot>
