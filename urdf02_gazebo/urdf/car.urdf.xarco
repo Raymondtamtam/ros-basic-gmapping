@@ -1,0 +1,18 @@
+<!-- 组合小车底盘与摄像头与雷达 -->
+<robot name="my_car_camera" xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <!-- 包括慣性矩陣文件 模擬世界的慣性-->
+    <xacro:include filename="head.xacro" />
+
+    <!-- 小車組件 -->
+    <xacro:include filename="demo05_car_base.urdf.xacro" />
+    <xacro:include filename="demo06_car_camera.urdf.xacro" />
+    <xacro:include filename="demo07_car_laser.urdf.xacro" />
+
+    <!-- 仿真LIDAR/攝像頭 -->
+    <xacro:include filename="gazebo/move.xacro" />
+    <xacro:include filename="gazebo/laser.xacro" />
+    <xacro:include filename="gazebo/camera.xacro" />
+    <xacro:include filename="gazebo/kinect.xacro" />
+
+</robot>

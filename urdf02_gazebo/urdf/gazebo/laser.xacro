@@ -1,0 +1,38 @@
+<robot name="my_sensors" xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <!-- 雷达 -->
+  <gazebo reference="laser">
+    <sensor type="ray" name="rplidar">
+      <pose>0 0 0 0 0 0</pose>
+      <!-- 雷達位置前面三個X,Y,Z的偏移量,後面三個是歐拉角/翻滾俯仰/偏航角度-->
+      <visualize>true</visualize>
+      <!-- TRUE=顯示雷達射綫/FALSE=不顯示 -->
+      <update_rate>5.5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples> <!-- LIDAR旋轉一周采樣多少個sample -->
+            <resolution>1</resolution> <!-- 設置成2=每2個射綫測距1次/3=每3射綫測距1次...，可以降低電腦計算壓力 -->
+            <min_angle>-3</min_angle>
+            <max_angle>3</max_angle> <!-- LIDAR前面的死角 -->
+          </horizontal>
+        </scan>
+        <range> <!-- LIDAR有效範圍0.1米-30米 -->
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution> <!-- 精確到0.01米 = 1厘米 -->
+        </range>
+        <noise> <!-- 高斯噪音/用以模擬誤差 【顯示在rviz會上下波動=不斷更新誤差情況】-->
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_rplidar" filename="libgazebo_ros_laser.so">
+        <topicName>/scan</topicName>
+        <frameName>laser</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>
