@@ -1,0 +1,19 @@
+
+<launch>
+    <!-- 启动乌龟节点与键盘控制节点 -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turtle1" output="screen" />
+    <node pkg="turtlesim" type="turtle_teleop_key" name="key" output="screen"/>
+    <!-- 启动创建第二只乌龟的节点 -->
+    <node pkg="tf04_test" type="test01_new_turtle_p.py" name="turtle2" output="screen" />
+
+    <!-- 启动两个坐标发布节点 -->
+    <!-- 01turtle 坐標發佈功能 -->
+    <node pkg="tf04_test" type="test02_pub_turtle_p.py" name="pub1" args="turtle1" output="screen"/>
+    <node pkg="tf04_test" type="test02_pub_turtle_p.py" name="pub2" args="turtle2" output="screen"/>
+    <node pkg="tf04_test" type="test02_pub_turtle_p.py" name="pub3" args="turtle3" output="screen"/>
+
+    <!-- 启动坐标转换节点 -->
+    <node pkg="tf04_test" type="test03_control_turtle2_p.py" name="control" output="screen" args="turtle2" />
+
+
+</launch>
