@@ -8,5 +8,3 @@
 
 ### [task1] Control multiple turtle in rostopic {pub/sub/service}
 
-### [done in python] comments will add later
-
