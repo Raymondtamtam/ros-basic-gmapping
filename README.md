@@ -2,8 +2,8 @@
 
 
 
-# ROS code for ros structure exercise
-# Environment : Ubuntu 20.04 ROS1 Noetic 
+	** ROS code for ros structure exercise	**
+	**Environment : Ubuntu 20.04 ROS1 Noetic 	**
 
 
 ### [01] Control multiple turtle in rostopic {pub/sub/service}
