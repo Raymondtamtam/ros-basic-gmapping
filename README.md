@@ -8,4 +8,4 @@
 
 ### [01] Control multiple turtle in rostopic {pub/sub/service}
 
-### [02] LIO SLAM {pub/sub/service}
+### [02] LIO SLAM 
